@@ -1,0 +1,1 @@
+{"processes":{"0247ba61-9059-47b9-b81e-2ff8cc614917":{"parent":"ddcd44c2-948e-4d8c-a724-1d36b6dc53c6","children":[]},"ddcd44c2-948e-4d8c-a724-1d36b6dc53c6":{"parent":null,"children":["0247ba61-9059-47b9-b81e-2ff8cc614917"]}},"files":{"/home/usuario/Informes practicas/P6/src/index.ts":["0247ba61-9059-47b9-b81e-2ff8cc614917"]},"externalIds":{}}
