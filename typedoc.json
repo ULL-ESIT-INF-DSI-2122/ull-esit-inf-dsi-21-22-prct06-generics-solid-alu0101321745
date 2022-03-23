@@ -1,6 +1,19 @@
 {
     "entryPoints": [
-        "./src/index.ts"        
+        "./src/ejercicio-1/combate.ts",
+        "./src/ejercicio-1/dc.ts",
+        "./src/ejercicio-1/fighter.ts",     
+        "./src/ejercicio-1/marvel.ts",
+        "./src/ejercicio-1/pokedex.ts",
+        "./src/ejercicio-1/pokemon.ts",
+        "./src/ejercicio-2/interfaz.ts",
+        "./src/ejercicio-2/basicStremeable.ts",
+        "./src/ejercicio-2/documental.ts",
+        "./src/ejercicio-2/documentales.ts",
+        "./src/ejercicio-2/pelicula.ts",
+        "./src/ejercicio-2/peliculas.ts",
+        "./src/ejercicio-2/serie.ts",
+        "./src/ejercicio-2/series.ts"
     ],
     "out": "./docs"
 }
