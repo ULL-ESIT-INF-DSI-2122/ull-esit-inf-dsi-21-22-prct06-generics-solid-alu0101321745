@@ -650,4 +650,70 @@ describe('Pruebas del ejercicio 2', () => {
 
 ## **Ejercicio 3: El cifrado indescifrable.**
 
+Para este ejercicio implementamos una clase Cifrado que recibe el alfabeto y clave para posteriormente cifrar o descifrar mensajes mediante el cifrado indescifrable.
 
+```ts
+/**
+ * Clase cifrado que representa instancias de cifrados indescifrables
+ */
+export class Cifrado {
+    constructor(public alphabet: string[], public key: string) {
+    }
+    cifrado(mensaje: string): string {
+        let resultado = '';
+        for (let i = 0, j = 0; i < mensaje.length; i++, j++) {
+            if (this.isInAlphabet(mensaje[i])) {
+                resultado += this.alphabet[this.getIndex(mensaje[i]) + (this.getIndex(this.key[i]) + 1)];
+            } else {
+                resultado += mensaje[i];
+            }
+            if (j == this.key.length - 1) j = 0;
+        }
+        return resultado;
+    }
+    descifrado(mensaje: string): string {
+      let resultado = '';
+      for (let i = 0, j = 0; i < mensaje.length; i++, j++) {
+          if (this.isInAlphabet(mensaje[i])) {
+              resultado += this.alphabet[this.getIndex(mensaje[i]) - (this.getIndex(this.key[i]) + 1)];
+          } else {
+              resultado += mensaje[i];
+          }
+          if (j == this.key.length - 1) j = 0;
+      }
+      return resultado;
+    }
+    isInAlphabet(char: string): boolean {
+        let result: boolean = false;
+        this.alphabet.forEach((element) => {
+            if (char == element) result = true;
+        });
+        return result;
+    }
+    getIndex(char: string): number {
+        return this.alphabet.findIndex((element) => element == char);
+    }
+}
+```
+
+**Pruebas:**
+
+```ts
+describe('Pruebas del ejercicio 3', () => {
+    const cipher = new Cifrado(['a', 'b', 'c', 'd', 'e', 'f', 'g'], 'abc');
+    describe('Pruebas de la clase Cifrado:', () => {
+        it('Existen los atributos de la clase cifrado:', () => {
+            expect(cipher.alphabet).not.to.be.eql(undefined);
+            expect(cipher.key).not.to.be.eql(undefined);
+        });
+        it('Podemos cifrar mensajes:', () => {
+            expect(cipher.cifrado('abc')).to.be.eql('bdf');
+            expect(cipher.cifrado('abh')).to.be.eql('bdh');
+        });
+        it('Podemos desccifrar mensajes:', () => {
+            expect(cipher.descifrado('bdf')).to.be.eql('abc');
+            expect(cipher.descifrado('bdh')).to.be.eql('abh');
+        });
+    });
+});
+```
