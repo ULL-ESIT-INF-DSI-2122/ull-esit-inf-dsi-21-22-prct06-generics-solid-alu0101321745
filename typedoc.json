@@ -13,7 +13,11 @@
         "./src/ejercicio-2/pelicula.ts",
         "./src/ejercicio-2/peliculas.ts",
         "./src/ejercicio-2/serie.ts",
-        "./src/ejercicio-2/series.ts"
+        "./src/ejercicio-2/series.ts",
+        "./src/ejercicios-PE103/interfaz.ts",
+        "./src/ejercicios-PE103/colecctions.ts",
+        "./src/ejercicios-PE103/complex.ts",
+        "./src/ejercicios-PE103/rational.ts"
     ],
     "out": "./docs"
 }
